@@ -31,12 +31,14 @@ let baseMaps = {
 // 1. Add a 2nd layer group for the tectonic plate data.
 let allEarthquakes = new L.LayerGroup();
 let tectonicPlates = new L.LayerGroup();
+let majorEQ = new L.LayerGroup();
 
 
 // 2. Add a reference to the tectonic plates group to the overlays object.
 let overlays = {
   "Earthquakes": allEarthquakes,
-  "Tectonic Plates": tectonicPlates
+  "Tectonic Plates": tectonicPlates,
+  "Major Earthquakes": majorEQ
 };
 
 // Then we add a control to the map that will allow the user to change which
@@ -148,7 +150,7 @@ let tectonicData = "https://raw.githubusercontent.com/fraxen/tectonicplates/mast
 d3.json(tectonicData).then(function(data) {
   console.log(data);
   L.geoJSON(data, {
-    color: "#ffffa1",
+    color: "#b34700",
     weight: 2
   })
   .addTo(tectonicPlates);

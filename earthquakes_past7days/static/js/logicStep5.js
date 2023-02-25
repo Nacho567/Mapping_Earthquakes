@@ -26,7 +26,7 @@ let baseMaps = {
 let earthquakes = new L.layerGroup();
 
 let overlays = {
-    Earthquakes: earthquakes
+    "Earthquakes": earthquakes
   };
 
 // Create the map object with a center and zoom level.
