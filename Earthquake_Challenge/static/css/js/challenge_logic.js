@@ -164,7 +164,7 @@ d3.json(majorEQData).then(function(data) {
   L.geoJSON(data, {
       pointToLayer: function(feature, latlng) {
         console.log(data);
-        return L.circleMarker(latlng);
+        return L.circleMarker(latlng); //error here
     },
     style: styleInfo,
     // We create a popup for each circleMarker to display the magnitude and location of the earthquake
