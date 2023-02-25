@@ -127,7 +127,7 @@ legend.onAdd = function () {
             magnitudes[i] + (magnitudes[i + 1] ? '&ndash;' + magnitudes[i + 1] + '<br>' : '+');
     }
 
-    return div;
+      return div;
 };
 
 legend.addTo(map);
