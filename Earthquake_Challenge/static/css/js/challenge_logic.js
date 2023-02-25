@@ -115,7 +115,8 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
      onEachFeature: function(feature, layer) {
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     }
-  }).addTo(allEarthquakes);
+  });
+}).addTo(allEarthquakes);
 
   // Then we add the earthquake layer to our map.
   allEarthquakes.addTo(map);
