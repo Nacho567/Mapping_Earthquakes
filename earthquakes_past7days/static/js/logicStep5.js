@@ -128,7 +128,7 @@ legend.onAdd = function () {
     }
 
       return div;
-};
+  };
 
 legend.addTo(map);
 
