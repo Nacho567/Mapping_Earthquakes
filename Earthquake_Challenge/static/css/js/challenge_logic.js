@@ -108,7 +108,7 @@ d3.json(earthquakeData).then(function(data) {
   L.geoJson(data, {
     	// We turn each feature into a circleMarker on the map.
     	pointToLayer: function(feature, latlng) {
-      		console.log(data);
+      		//console.log(data);
       		return L.circleMarker(latlng);
         },
       // We set the style for each circleMarker using our styleInfo function.
@@ -118,12 +118,12 @@ d3.json(earthquakeData).then(function(data) {
      onEachFeature: function(feature, layer) {
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     }
-  });
-})
-.addTo(allEarthquakes);
+  }).addTo(allEarthquakes);
 
   // Then we add the earthquake layer to our map.
   allEarthquakes.addTo(map);
+
+//end of first D3 function: });
 
   // 3. Retrieve the major earthquake GeoJSON data >4.5 mag for the week.
 let majorEQData = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson";
@@ -167,23 +167,24 @@ d3.json(majorEQData).then(function(data) {
   //  after the marker has been created and styled.
   L.geoJSON(data, {
       pointToLayer: function(feature, latlng) {
-        console.log(data);
+        //console.log(data);
         return L.circleMarker(latlng); //error here
     },
+
+    //set style
     style: styleInfo,
+
     // We create a popup for each circleMarker to display the magnitude and location of the earthquake
     //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);   
   }
-  // 8. Add the major earthquakes layer to the map.
-  
-  // 9. Close the braces and parentheses for the major earthquake data.
   }).addTo(majorEQ);
 
-  //add layer to map
+  // 8. Add the major earthquakes layer to the map.
   majorEQ.addTo(map);
-});
+  // 9. Close the braces and parentheses for the major earthquake data.
+  });
 
   // Here we create a legend control object.
 let legend = L.control({
@@ -206,7 +207,7 @@ legend.onAdd = function() {
 
 // Looping through our intervals to generate a label with a colored square for each interval.
   for (var i = 0; i < magnitudes.length; i++) {
-    console.log(colors[i]);
+    //console.log(colors[i]);
     div.innerHTML +=
       "<i style='background: " + colors[i] + "'></i> " +
       magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
@@ -222,12 +223,14 @@ legend.onAdd = function() {
 let tectonicData = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
 d3.json(tectonicData).then(function(data) {
-  console.log(data);
+  //console.log(data);
   L.geoJSON(data, {
+    style: {
     color: "#b34700",
     weight: 2
+    }
   })
   .addTo(tectonicPlates);
 tectonicPlates.addTo(map);
-    
-  });
+});
+});
