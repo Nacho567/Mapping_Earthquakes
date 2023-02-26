@@ -167,7 +167,7 @@ d3.json(majorEQData).then(function(data) {
   L.geoJSON(data, {
       pointToLayer: function(feature, latlng) {
         //console.log(data);
-        return L.circleMarker(latlng); //error here
+        return L.circleMarker(latlng);
     },
 
     //set style
