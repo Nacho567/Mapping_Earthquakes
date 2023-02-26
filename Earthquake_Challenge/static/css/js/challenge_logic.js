@@ -145,10 +145,10 @@ d3.json(majorEQData).then(function(data) {
   // 5. Change the color function to use three colors for the major earthquakes based on the magnitude of the earthquake.
   function getColor(magnitude) {
     if (magnitude > 6) {
-      return "#ea2c2c";
+      return "#000000";
     }
     if (magnitude > 5) {
-      return "#ea822c";
+      return "#ea2c2c";
     }
     return "#98ee00";
   }
