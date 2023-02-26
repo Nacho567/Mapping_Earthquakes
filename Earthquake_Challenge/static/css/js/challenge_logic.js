@@ -35,7 +35,6 @@ let baseMaps = {
   "Streets": streets,
   "Satellite": satelliteStreets,
   "Dark": darkmap,
-  "Dark2": dark
 };
 
 // 1. Add a 2nd layer group for the tectonic plate data.
